@@ -106,9 +106,10 @@ section .content{
     margin: 5px 0 0 0;
     padding: 0 10px 0 10px;
 }
-.content-2 .container label{
-    width: 100%;
+.content-2 .container .cameras-container label{
     cursor: pointer;
+    width: 100%;
+    display: block;
 }
 .content-2 .container .camera:hover{
     background: chartreuse;
@@ -138,6 +139,7 @@ section .content{
 .content-2 .container .cameras-container .camera_menu p{
     display: inline;
 }
+
 .content-2 .container .cameras-container .arrows-controller{
     width: 100%;
     display: flex;
