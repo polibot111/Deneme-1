@@ -198,8 +198,16 @@ section .content{
   
     transform: rotate(45deg);
 }
-
-
+#camera-1:checked ~ div .camera_screen{
+    background-color: burlywood;
+}
+#camera-2:checked ~ div .camera_screen{
+    background-color: cyan;
+}
+#camera-3:checked ~ div .camera_screen
+{
+    background-color: chartreuse;
+}
 #camera-1:checked ~ div .screen-1,
 #camera-2:checked ~ div .screen-2,
 #camera-3:checked ~ div .screen-3
