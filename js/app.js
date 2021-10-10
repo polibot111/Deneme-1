@@ -1,30 +1,69 @@
+var timeout;
+mouse = false;
+function mousedown()
+{
+  timeout = setTimeout(function(){	mouse = true;callEvent(); }, 3000);
+  
+}
+function mouseup()
+{
+	clearTimeout(timeout);
+  mouse =false;
+}
+function callEvent()
+{
+ if(mouse)
+ {
+   // do whatever you want
+   // it will continue executing until mouse is not released
+
+   var text = document.getElementById("demo").innerHTML;
+   var favDrink = prompt("Kamera Adını Giriniz", text);
+ 
+   document.getElementById("demo").innerHTML = favDrink;
+   
+ }
+ else
+ return;
+}
+
+function myFunction() {
+    var text = document.getElementById("demo").innerHTML;
+    var favDrink = prompt("Kamera Adını Giriniz", text);
+  
+    document.getElementById("demo").innerHTML = favDrink;
+  }
 
 
-var x_camera_2 =document.getElementById('x-2');
-var y_camera_2 =document.getElementById('y-2');
-var x_camera_3=document.getElementById('x-3');
-var y_camera_3 =document.getElementById('y-3');
 
 
-var x_camera_1 = document.getElementById('x-1');
-var y_camera_1 = document.getElementById('y-1');
-function up1() {
-var number = parseInt(y_camera_1.innerHTML);
-y_camera_1.innerHTML = number+1;
-console.log(number+1);
-}
-function down1() {
-var number = parseInt(y_camera_1.innerHTML);
-y_camera_1.innerHTML = number-1;
-console.log(number-1);
-}
-function left1() {
-var number = parseInt(x_camera_1.innerHTML);
-x_camera_1.innerHTML = number-1;
-console.log(number-1);
-}
-function right1() {
-var number = parseInt(x_camera_1.innerHTML);
-x_camera_1.innerHTML = number+1;
-console.log(number+1);
-}
+
+
+
+
+
+  var timeout;
+  mouse = false;
+  function mousedown()
+  {
+    timeout = setTimeout(function(){	mouse = true;callEvent(); }, 3000);
+    
+  }
+  function mouseup()
+  {
+      clearTimeout(timeout);
+    mouse =false;
+  }
+  function callEvent()
+  {
+   if(mouse)
+   {
+        var text = document.getElementById("demo").innerHTML;
+     var favDrink = prompt("Kamera Adını Giriniz", text);
+   
+     document.getElementById("demo").innerHTML = favDrink;
+     
+   }
+   else
+   return;
+  }

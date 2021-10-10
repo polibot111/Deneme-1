@@ -67,9 +67,9 @@
                 </div>
                 <div class="cameras-container">
                     <div class="camera_menu">
-                    <div  class="camera camera-div-1"><label for="camera-1" ><i><img src="images/icons/video.svg"></i> Camera-1 </label></div>
-                    <div  class="camera camera-div-2"><label for="camera-2" ><i><img src="images/icons/video.svg"></i> Camera-2 </label></div>
-                    <div  class="camera camera-div-3"><label for="camera-3" ><i><img src="images/icons/video.svg"></i> Camera-3 </label></div>
+                    <div  class="camera camera-div-1"><label for="camera-1" onmousedown="mousedown()" onmouseup="mouseup()" ><i><img src="images/icons/video.svg"></i><p> </p><p id="camera_name_1">Camera-1</p>  </label></div>
+                    <div  class="camera camera-div-2"><label for="camera-2" onmousedown="mousedown()" onmouseup="mouseup()" ><i><img src="images/icons/video.svg"></i><p> </p><p id="camera_name_2">Camera-2</p>  </label></div>
+                    <div  class="camera camera-div-3"><label for="camera-3" onmousedown="mousedown()" onmouseup="mouseup()" ><i><img src="images/icons/video.svg"></i><p> </p><p id="camera_name_3">Camera-3</p>   </label></div>
                      </div>
                      <div class="arrows-controller">
                           <div class="arrows-container">
@@ -105,6 +105,8 @@
         </section>
     </div>
     <script>
+
+        //Yön Tuşlarının Çalışması.
         var x_camera_2 =document.getElementById('x-2');
         var y_camera_2 =document.getElementById('y-2');
         var x_camera_3=document.getElementById('x-3');
@@ -183,7 +185,49 @@
                 console.log(number+1);
             }
     }
+
+
+
+    //Kamera Adı Değiştirme.
+  var timeout;
+  mousecontrol = false;
+  function mousedown()
+  {
+    timeout = setTimeout(function(){	mousecontrol = true;callEvent(); }, 3000);
     
+  }
+  function mouseup()
+  {
+      clearTimeout(timeout);
+      mousecontrol =false;
+  }
+  function callEvent()
+  {
+   if(mousecontrol && document.getElementById('camera-1').checked)
+   {
+     var cameraname = document.getElementById("camera_name_1").innerHTML;
+     var newCameraName = prompt("Kamera Adını Giriniz", cameraname);
+   
+     document.getElementById("camera_name_1").innerHTML = newCameraName;
+     
+   }
+   else if(mousecontrol && document.getElementById('camera-2').checked)
+   {
+    var cameraname = document.getElementById("camera_name_2").innerHTML;
+     var newCameraName = prompt("Kamera Adını Giriniz", cameraname);
+   
+     document.getElementById("camera_name_2").innerHTML = newCameraName;
+   }
+   else if(mousecontrol && document.getElementById('camera-3').checked)
+   {
+    var cameraname = document.getElementById("camera_name_3").innerHTML;
+     var newCameraName = prompt("Kamera Adını Giriniz", cameraname);
+   
+     document.getElementById("camera_name_3").innerHTML = newCameraName;
+   }
+   else
+   return;
+  }
     </script>
 </body>
 </html>

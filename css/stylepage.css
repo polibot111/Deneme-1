@@ -135,6 +135,9 @@ section .content{
 
     height: 52%;
 }
+.content-2 .container .cameras-container .camera_menu p{
+    display: inline;
+}
 .content-2 .container .cameras-container .arrows-controller{
     width: 100%;
     display: flex;
