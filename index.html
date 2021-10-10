@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylepage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="js/clock.js"></script>
+    <script src="js/app.js"></script>
+    <title>Biyodemi</title>
+</head>
+<body onload="realtimeClock()">
+    <div class="wrapper" >
+        <header>
+            <div class="headercontainer">
+             <div>Furkan Kerim Koçhan</div>       
+            <div id="clock" class="clock"></div> 
+            </div>
+        </header>
+        <input type="radio" name="slider" id="patient" checked>
+        <input type="radio" name="slider" id="camera" >
+        <input type="radio" name="slider" id="stretcher">
+        <input type="radio" name="slider" id="doctor">
+        <nav>
+            <label for="patient" class="patient"><i><img src="images/icons/patient.svg"></i> Patient</label>
+            <label for="camera" class="camera"><i><img src="images/icons/video.svg"></i> Camera </label>
+            <label for="stretcher" class="stretcher"><i><img src="images/icons/stretcher.png"></i> Stretcher</label>
+            <label for="doctor" class="doctor"><i><img src="images/icons/doctor.svg"></i> Doctor </label>
+            <div class="slider">
+
+            </div>
+        </nav>
+        <section>
+            <div class="content content-1">
+                <div class="title"><h3>Furkan Kerim Koçhan</h4></div>
+                <p>Kilo : 70kg </p>
+                <p>Yaş: 24 </p>
+                <p>Hastalık: Kalbi Kırılmış </p>
+            </div>
+            <div class="content content-2">
+        
+                <input type="radio" name="cameras" id="camera-1" checked>
+                <input type="radio" name="cameras" id="camera-2">
+                <input type="radio" name="cameras" id="camera-3">
+                
+               <div class="container">
+                   <div class="camera_screen">
+                    <div class="screen screen-1">
+                    <p id="x-1">1</p>
+                    <p id="y-1">1</p>
+                    </div>
+                    <div class="screen screen-2">
+                        <p id="x-2">1</p>
+                        <p id="y-2">1</p>
+
+                    </div>
+                    <div class="screen screen-3">
+                        <p id="x-3">1</p>
+                        <p id="y-3">1</p>
+
+                    </div>
+                   
+                </div>
+                <div class="cameras-container">
+                    <div class="camera_menu">
+                    <div  class="camera camera-div-1"><label for="camera-1" ><i><img src="images/icons/video.svg"></i> Camera-1 </label></div>
+                    <div  class="camera camera-div-2"><label for="camera-2" ><i><img src="images/icons/video.svg"></i> Camera-2 </label></div>
+                    <div  class="camera camera-div-3"><label for="camera-3" ><i><img src="images/icons/video.svg"></i> Camera-3 </label></div>
+                     </div>
+                     <div class="arrows-controller">
+                          <div class="arrows-container">
+                         <div class="vertical">
+                             
+                             <button class="arrow up" onclick="up1()"></button>
+                         </div>
+                         
+                         <div class="horizontal">
+                             <button class="arrow left" onclick="left1()"></button>
+                             <button class="arrow right" onclick="right1()"></button>
+                           
+                         </div>
+                         <div class="vertical">
+                              <button class="arrow down" onclick="down1()"></button>
+                         </div>
+                        
+                    </div>
+                     </div>
+                    
+               </div>
+                
+               
+            </div>
+        
+        </div>
+            <div class="content content-3">
+
+            </div>
+            <div class="content content-4">
+
+            </div>
+        </section>
+    </div>
+    <script>
+        var x_camera_2 =document.getElementById('x-2');
+        var y_camera_2 =document.getElementById('y-2');
+        var x_camera_3=document.getElementById('x-3');
+        var y_camera_3 =document.getElementById('y-3');
+        var x_camera_1 = document.getElementById('x-1');
+        var y_camera_1 = document.getElementById('y-1');
+        function up1() {
+            
+            if (document.getElementById('camera-1').checked) {
+                var number = parseInt(y_camera_1.innerHTML);
+                y_camera_1.innerHTML = number+1;
+                console.log(number+1);
+            }
+            else if(document.getElementById('camera-2').checked){
+                var number = parseInt(y_camera_2.innerHTML);
+                y_camera_2.innerHTML = number+1;
+                console.log(number+1);
+            }
+            else{
+                var number = parseInt(y_camera_3.innerHTML);
+                y_camera_3.innerHTML = number+1;
+                console.log(number+1);
+            }
+    
+    }
+    function down1() {
+        if (document.getElementById('camera-1').checked) {
+                var number = parseInt(y_camera_1.innerHTML);
+                y_camera_1.innerHTML = number-1;
+                console.log(number+1);
+            }
+            else if(document.getElementById('camera-2').checked){
+                var number = parseInt(y_camera_2.innerHTML);
+                y_camera_2.innerHTML = number-1;
+                console.log(number+1);
+            }
+            else{
+                var number = parseInt(y_camera_3.innerHTML);
+                y_camera_3.innerHTML = number-1;
+                console.log(number+1);
+            }
+    }
+   
+
+    function left1() {
+        if (document.getElementById('camera-1').checked) {
+                var number = parseInt(x_camera_1.innerHTML);
+                x_camera_1.innerHTML = number-1;
+                console.log(number+1);
+            }
+            else if(document.getElementById('camera-2').checked){
+                var number = parseInt(x_camera_2.innerHTML);
+                x_camera_2.innerHTML = number-1;
+                console.log(number+1);
+            }
+            else{
+                var number = parseInt(x_camera_3.innerHTML);
+                x_camera_3.innerHTML = number-1;
+                console.log(number+1);
+            }
+    }
+    function right1() {
+        if (document.getElementById('camera-1').checked) {
+                var number = parseInt(x_camera_1.innerHTML);
+                x_camera_1.innerHTML = number+1;
+                console.log(number+1);
+            }
+            else if(document.getElementById('camera-2').checked){
+                var number = parseInt(x_camera_2.innerHTML);
+                x_camera_2.innerHTML = number+1;
+                console.log(number+1);
+            }
+            else{
+                var number = parseInt(x_camera_3.innerHTML);
+                x_camera_3.innerHTML = number+1;
+                console.log(number+1);
+            }
+    }
+    
+    </script>
+</body>
+</html>
