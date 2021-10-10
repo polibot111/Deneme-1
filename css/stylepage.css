@@ -93,6 +93,7 @@ section .content{
     height: 25vw;
     overflow: hidden;
     background: saddlebrown;
+    border-radius: 5px;
 
 }
 
